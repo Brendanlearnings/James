@@ -8,7 +8,7 @@ def init_connection():
     return snowflake.connector.connect(
         **st.secrets["snowflake"], client_session_keep_alive=True
     )
-st.write(f'{date.today()}')
+    
 st.title('Read and write to Snowflake Database')
 st.markdown('This demo sets out to showcase the ease at which data can be captured and retrieved!')
 
