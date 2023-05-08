@@ -16,9 +16,9 @@ name = st.text_input('Name')
 surname = st.text_input('Surname')
 dob = st.date_input(
     'Date of Birth',
-    {date(1900,1,1),
+    [date(1900,1,1),
         date.today()
-    }
+    ]
 )
 
 phone = st.text_input('Phone Number')
