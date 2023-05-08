@@ -31,7 +31,7 @@ if st.button('Submit'):
 
         data = cur.execute('SELECT COUNT(1) FROM GRAFANA.DEMO.USER_INFO;')
         counts = cur.fetchall()
-        counts = counts[0]
+        counts = counts[0][0]
         st.write(type(counts))
         st.write(f'There has been {counts} submissions')
         cur.close()
