@@ -16,7 +16,8 @@ name = st.text_input('Name')
 surname = st.text_input('Surname')
 dob = st.date_input(
     'Date of Birth',
-        date.today()
+    min_value = date(1900,1,1),
+    max_value = date.today()
     
 )
 
