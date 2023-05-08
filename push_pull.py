@@ -18,11 +18,13 @@ dob = st.date_input(
     'Date of Birth',
     date.today()
 )
+dob = str(dob)
 phone = st.text_input('Phone Number')
 
 if st.button('Submit'):
     with init_connection().cursor() as cur:
         cur.execute(f"INSERT INTO GRAFANA.DEMO.USER_INFO (NAME,SURNAME,DOB,PHONE) VALUES('{name}','{surname}',{dob},'{phone}');")
+        st.write('Your data has been successfully captured!')
 
     
 
