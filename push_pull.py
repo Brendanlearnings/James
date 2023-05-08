@@ -16,14 +16,16 @@ name = st.text_input('Name')
 surname = st.text_input('Surname')
 dob = st.date_input(
     'Date of Birth',
-    date.today()
+    {date(1900,1,1),
+        date.today()
+    }
 )
-dob = str(dob)
+
 phone = st.text_input('Phone Number')
 
 if st.button('Submit'):
     with init_connection().cursor() as cur:
-        cur.execute(f"INSERT INTO GRAFANA.DEMO.USER_INFO (NAME,SURNAME,DOB,PHONE) VALUES('{name}','{surname}',{dob},'{phone}');")
+        cur.execute(f"INSERT INTO GRAFANA.DEMO.USER_INFO (NAME,SURNAME,DOB,PHONE) VALUES('{name}','{surname}','{dob}','{phone}');")
         st.write('Your data has been successfully captured!')
 
     
