@@ -22,7 +22,7 @@ phone = st.text_input('Phone Number')
 
 if st.button('Submit'):
     with init_connection.cursor() as cur:
-        cur.execute(f"INSERT INTO VALUES('{name}','{surname}',{dob},'{phone}');")
+        cur.execute(f"INSERT INTO GRAFANA.DEMO.USER_INFO (NAME,SURNAME,DOB,PHONE) VALUES('{name}','{surname}',{dob},'{phone}');")
 
     
 
